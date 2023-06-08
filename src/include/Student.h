@@ -7,7 +7,9 @@
 #include <stdlib.h>
 
 typedef struct Student {
-  /* Your code here to declare the struct */
+	GenericTraits *impl;
+	int grade;
+	char *name;
 } Student;
 
 void *new_Student(char *);

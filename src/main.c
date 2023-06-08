@@ -33,7 +33,7 @@ int main(int argc, char const *argv[]) {
   (void)!fscanf(input, "%d\n", &n);
 
   // Get the constructor of the object.
-  /* Your code here to request for the constructor */
+  Constructor ctor = get_constructor(type);
 
   // Read the following n objects from the input.
   // Initialize them using prototype.
@@ -42,7 +42,10 @@ int main(int argc, char const *argv[]) {
   for (int i = 0; i < n; i++) {
     memset(tmp, 0, MAX_LEN);
     (void)!fgets(tmp, MAX_LEN, input);
-    /* Your code here to initialize the objects */
+	// VERIFY that tmp is expected
+	// must be ** in an element
+	// ctor returns Int* which is analogous to GT** upon creation
+	array[i] = ctor(tmp);
   }
 
   // Sort n objects.

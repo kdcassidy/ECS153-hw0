@@ -7,7 +7,8 @@
 
 /// Human only have a name.
 typedef struct Human {
-  /* Your code here to declare the struct */
+	GenericTraits *impl;
+	char *name;
 } Human;
 
 void *new_Human(char *);
