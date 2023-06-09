@@ -36,7 +36,7 @@ void dump_Int(void *self, FILE *fp) {
 int cmp_Int(void *self, void *other) {
 	Int *int_self = self;
 	Int *int_other = other;
-	return int_self->i - int_other->i;
+	return int_self->i - int_other->i; // Negative if R > L
 }
 
 void drop_Int(void *self) {
