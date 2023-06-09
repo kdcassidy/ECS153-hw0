@@ -47,7 +47,7 @@ void add_ctor_dtor(char *type_name, Constructor ctor, Destructor dtor);
 
 #define DEFINE_STRUCT(Object)                                                  \
   void drop_##Object(void *this) {											   \
-	##Object *object_self = (##Object *)this;                                  \
+	Object *object_self = (Object *)this;                                  \
 	free(object_self->impl);                                                   \
 	free(object_self);                                                         \
   }                                                                            \

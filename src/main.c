@@ -35,6 +35,8 @@ int main(int argc, char const *argv[]) {
   // Get the constructor of the object.
   Constructor ctor = get_constructor(type);
 
+  
+
   // Read the following n objects from the input.
   // Initialize them using prototype.
   GenericTraits **array[n];
@@ -60,7 +62,7 @@ int main(int argc, char const *argv[]) {
   for (int i = 0; i < n; i++) {
 	(*(array[i]))->drop(array[i]);
   }
-  
+
 
   // Close the files we opened.
   if (outputGiven)

@@ -52,8 +52,7 @@ void drop_Int(void *self) {
 	free(int_self);
 }
 
-// To be called at start of program
 // Struct type must be added to registry of ctors, dtors
-void register_Int() {
+void __attribute__((constructor)) register_Int() {
     add_ctor_dtor("Int", new_Int, drop_Int);
 }
