@@ -1,4 +1,3 @@
-
 #include "GenericTraits.h"
 #include <string.h>
 

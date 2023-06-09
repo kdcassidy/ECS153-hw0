@@ -29,19 +29,19 @@ void *new_Int(char *string) {
 }
 
 void dump_Int(void *self, FILE *fp) {
-	Int *this = self;
+	Int *this = (Int *)self;
 	fprintf(fp, "0x%X\n", this->i);
 }
 
 int cmp_Int(void *self, void *other) {
-	Int *int_self = self;
-	Int *int_other = other;
+	Int *int_self = (Int *)self;
+	Int *int_other = (Int *)other;
 	return int_self->i - int_other->i; // Negative if R > L
 }
 
 void drop_Int(void *self) {
 	// Must cast (void *) into (Int *)
-	Int *int_self = self;
+	Int *int_self = (Int *)self;
 	free(int_self->impl);
 	free(int_self);
 }

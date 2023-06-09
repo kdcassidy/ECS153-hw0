@@ -53,10 +53,14 @@ int main(int argc, char const *argv[]) {
 
   // Print n objects to output using dump.
   for (int i = 0; i < n; i++) {
-    /* Your code here to print the sorted objects */
+	(*(array[i]))->dump(array[i], output);
   }
 
   /* Your code here to de-allocate the memories we have allocated. */
+  for (int i = 0; i < n; i++) {
+	(*(array[i]))->drop(array[i]);
+  }
+  
 
   // Close the files we opened.
   if (outputGiven)

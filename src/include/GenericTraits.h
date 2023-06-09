@@ -46,12 +46,12 @@ void add_ctor_dtor(char *type_name, Constructor ctor, Destructor dtor);
   void __attribute__((constructor)) register_##Object();
 
 #define DEFINE_STRUCT(Object)                                                  \
-  void drop_##Object(void *this) {
-	Object *object_self = this;
-	free(object_self->impl);
-	free(object_self);
+  void drop_##Object(void *this) {											   \
+	##Object *object_self = (##Object *)this;                                  \
+	free(object_self->impl);                                                   \
+	free(object_self);                                                         \
   }                                                                            \
   void __attribute__((constructor)) register_##Object() {                      \
-    add_ctor_dtor(#Object, new_##Object, drop_##Object);                                \
-  }
+    add_ctor_dtor(#Object, new_##Object, drop_##Object);                       \
+  }                                                                            
 #endif
